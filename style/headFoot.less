@@ -1,0 +1,70 @@
+.footer {
+  height: 50px;
+  text-align: center;
+  padding: 1px;
+  box-sizing: border-box;
+  background-color: @colorSpace;
+
+  span {
+    display: block;
+    color: #dddddd;
+    width: auto;
+    font-family: @fontfamilyOsw;
+    font-size: 12px;
+    margin: 5px 0 0 0;
+  }
+
+  a{
+    font-family: @fontfamilyOsw;
+    display: inline-block;
+    cursor: pointer;
+    color: #dddddd;
+    font-style: normal;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 12px;
+    margin: auto;
+  }
+}
+
+.navB {
+  background-color: @colorSpace;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+
+  .branding {
+    box-sizing: border-box;
+
+    h1 {
+      margin: 0;
+
+      a {
+        width: 450px;
+        height: 90px;
+        line-height: 90px;
+        white-space: nowrap;
+        overflow: hidden;
+        cursor: pointer;
+        text-decoration: none;
+        color: #eee;
+        box-sizing: border-box;
+
+        @media screen and (max-width: 452px) {
+          line-height: 88px;
+        }
+
+        span {
+          text-align: center;
+          text-transform: uppercase;
+          letter-spacing: 8px;
+
+          @media screen and (max-width: 452px) {
+            letter-spacing: 1px;
+            font-size: 0.7em;
+          }
+        }
+      }
+    }
+  }
+}

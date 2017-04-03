@@ -1,0 +1,453 @@
+
+body {
+  transition: background-color .5s;
+  margin: 0;
+  font-family: @fontfamilyCat;
+
+}
+body, html {
+  height:100%;
+}
+
+.absfs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1600px;
+
+  .containerMenu {
+    position: fixed;
+    left: 25px;
+    top: 40px;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 1;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid @colorBorderDark;
+
+    &:hover {
+      border: 1px solid @colorBorderLight;
+      .bar1, .bar2, .bar3 {
+        background-color: white;
+      }
+    }
+
+    .bar1, .bar2, .bar3 {
+      width: 15px;
+      height: 2px;
+      background-color: #E10E36;
+      margin: 3px 0;
+      transition: 0.4s;
+    }
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+    @media screen and (max-width: 452px) {
+      padding-top: 15px;
+
+      a {
+        font-size: 16px;
+      }
+    }
+
+    a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 32px;
+      color: #818181;
+      display: block;
+      transition: color 0.3s, transform 0.5s;
+
+      &:hover  {
+        color: #f1f1f1;
+        transform: rotateY(30deg);
+      }
+    }
+
+    .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+      }
+    }
+
+  #main {
+    transition: margin-left .5s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+
+    .title {
+      position: absolute;
+      color:#eee;
+      z-index: 4;
+      min-width: 400px;
+      left: 50%;
+      margin-left: -200px;
+      text-align: center;
+      font-size: 20px;
+      cursor: default;
+      user-select: none;
+      text-transform: uppercase;
+      letter-spacing:15px;
+
+      @media screen and (max-width: 452px) {
+        letter-spacing: 12px;
+
+      }
+    }
+
+    .slideshow-container{
+      position: relative;
+      background-color: black;
+
+      .mySlides {
+        display: none;
+
+      }
+
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+      }
+
+      .next {
+        right: 0;
+       border-radius: 3px 0 0 3px;
+      }
+
+      .dot {
+        cursor: pointer;
+        height: 5px;
+        width: 5px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active, .dot:hover {
+        background-color: #717171;
+      }
+
+      .autograph{
+        width: 25%;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+      }
+
+      .fa {
+        position: absolute;
+        width: 200px;
+        margin-left: -115px;
+        bottom: 20px;
+        left: 50%;
+        z-index: 4;
+
+        a{
+          position: absolute;
+          font-size: 15px;
+          width: 15px;
+          bottom: 0;
+          margin-left: 0;
+          padding: 10px;
+          text-align: center;
+          text-decoration: none;
+          border-radius: 50%;
+          transition: .3s;
+
+          @media screen and (max-width: 452px){
+            font-size: 10px;
+            width: 10px;
+            padding: 6.67px;
+          }
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+        .fa-facebook {
+          background: #3B5998;
+          color: white;
+          left:-10%;
+          &::before{
+            content: "\f09a";
+          }
+        }
+
+        .fa-twitter {
+          background: #55ACEE;
+          color: white;
+          left:10%;
+          &::before {
+            content: "\f099";
+          }
+        }
+
+        .fa-google {
+          background: #dd4b39;
+          color: white;
+          left:30%;
+          &::before {
+            content: "\f1a0";
+          }
+        }
+
+        .fa-linkedin {
+          background: #007bb5;
+          color: white;
+          left:50%;
+          &::before{
+            content: "\f0e1";
+          }
+        }
+
+        .fa-youtube {
+          background: #bb0000;
+          color: white;
+          left:70%;
+          &::before{
+            content: "\f167";
+          }
+        }
+
+        .fa-instagram {
+          background: #125688;
+          color: white;
+          left:90%;
+          &::before {
+            content: "\f16d";
+          }
+        }
+      }
+
+      .pressaOne {
+        position: absolute;
+        width: 10%;
+        right: 40px;
+        top:5%;
+        box-sizing: border-box;
+
+        a {
+          cursor: pointer;
+
+          img {
+            box-sizing: border-box;
+            border: 1px solid rgba(103,192,223,0.5);
+
+            &:hover{
+              border: 1px solid rgba(103,192,223,1);
+            }
+          }
+        }
+        @media screen and (max-width: 452px) {
+          top: 12%;
+        }
+      }
+
+      .pressaTwo {
+        position: absolute;
+        width: 10%;
+        right: 40px;
+        top:25%;
+        box-sizing: border-box;
+
+        a {
+          cursor: pointer;
+
+          img {
+            box-sizing: border-box;
+            border: 1px solid rgba(103,192,223,0.5);
+
+            &:hover{
+              border: 1px solid rgba(103,192,223,1);
+            }
+          }
+        }
+        @media screen and (max-width: 452px) {
+          top: 32%;
+        }
+      }
+    }
+
+    .parallax {
+      background-color: @colorSpace;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+
+      .wer {
+        display: flex;
+        flex-direction: column;
+        background: url('../img/up/82.jpg') fixed bottom no-repeat;
+        background-size: cover ;
+
+        .newsTitle {
+
+          h3 {
+            color: #fefefe;
+            font-family: @fontfamilyOsw;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: left;
+            margin: 5px 0 5px 5px;
+          }
+
+        }
+        .news {
+           flex-basis: auto;
+          background-color: darken(@colorLightSpace,30%);
+           display: flex;
+           box-sizing: border-box;
+
+          @media screen and (max-width: 452px) {
+            flex-direction: column;
+            padding-bottom: 15px;
+          }
+
+          .newsFoto {
+            box-sizing: border-box;
+            flex-shrink: 1;
+
+            div {
+              width: 250px;
+
+              video {
+                width: 100%;
+                height: auto;
+              }
+
+              @media screen and (max-width: 452px) {
+               width: auto;
+              }
+
+              a{
+                text-decoration: none;
+                cursor: pointer;
+
+                img {
+                  box-sizing: border-box;
+                  border: 1px solid rgba(103,192,223,0.5);
+
+                  &:hover{
+                    border: 1px solid rgba(103,192,223,1);
+                  }
+                }
+              }
+            }
+          }
+
+          .newsInformation{
+            box-sizing: border-box;
+            flex-grow: 1;
+            margin:0 10px 0 50px;
+
+            @media screen and (max-width: 452px) {
+              margin:0 10px 0 10px;
+            }
+
+            .newsInformationTitle {
+              margin: 0 0 5px 0;
+
+              a{
+                margin: 0;
+                text-decoration: none;
+                font-size: 24px;
+                line-height: 1.3em;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                font-family: @fontfamilyOsw;
+                font-style: normal;
+                color: #fefefe;
+                cursor: pointer;
+              }
+            }
+
+            span {
+              font-family: @fontfamilyOsw;
+              font-style: normal;
+              font-size: 14px;
+              color: #fefefe;
+            }
+
+            p {
+              font-family: @fontfamilyAri;
+              font-size: 16px;
+              font-weight: 100;
+              color: #fefefe;
+              line-height: 1.5em;
+              text-align: left;
+            }
+
+            a{
+              color: #999999 ;
+              font-size: 12px ;
+              font-weight: bold ;
+              font-style: normal ;
+              text-decoration: none;
+              cursor: pointer;
+              font-family: @fontfamilyOsw;
+              &:hover {
+                color: #fefefe;
+              }
+            }
+          }
+        }
+      }
+    }
+
+/*2,3 pages*/
+    .parallaxB {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: url('../img/image/1.jpg') fixed center top no-repeat;
+      background-size: cover;
+    }
+  }
+}

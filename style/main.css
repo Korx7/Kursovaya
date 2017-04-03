@@ -1,0 +1,1032 @@
+/*generic helpers*/
+/*.abs {position: absolute;}
+.fixed {position: fixed;}
+.fs {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+}*/
+body {
+  transition: background-color 0.5s;
+  margin: 0;
+  font-family: 'Catamaran', sans-serif;
+  /*font-family: 'Oswald', sans-serif;*/
+}
+body,
+html {
+  height: 100%;
+}
+.absfs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.absfs .containerMenu {
+  position: fixed;
+  left: 25px;
+  top: 40px;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 1;
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid rgba(103, 192, 223, 0.5);
+}
+.absfs .containerMenu:hover {
+  border: 1px solid #67c0df;
+}
+.absfs .containerMenu:hover .bar1,
+.absfs .containerMenu:hover .bar2,
+.absfs .containerMenu:hover .bar3 {
+  background-color: white;
+}
+.absfs .containerMenu .bar1,
+.absfs .containerMenu .bar2,
+.absfs .containerMenu .bar3 {
+  width: 15px;
+  height: 2px;
+  background-color: #E10E36;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+.absfs .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  /*mojno ubrat'*/
+  transition: 0.5s;
+  padding-top: 60px;
+}
+@media screen and (max-width: 452px) {
+  .absfs .sidenav {
+    padding-top: 15px;
+    background-color: red;
+  }
+  .absfs .sidenav a {
+    font-size: 18px;
+  }
+}
+.absfs .sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 32px;
+  color: #818181;
+  display: block;
+  transition: color 0.3s, transform 0.5s;
+}
+.absfs .sidenav a:hover {
+  color: #f1f1f1;
+  transform: rotateY(30deg);
+}
+.absfs .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.absfs #main {
+  transition: margin-left 0.5s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  /*navigation two page start*/
+  /*navigation two page finish*/
+  /*second page*/
+  /*!!!!!!!!!!!!!!!!!!!!!!!!udaliit parralaxB'*/
+}
+.absfs #main .title {
+  position: absolute;
+  /*color: #4B92C9;*/
+  color: #eee;
+  z-index: 4;
+  min-width: 400px;
+  left: 50%;
+  margin-left: -200px;
+  text-align: center;
+  font-size: 20px;
+  cursor: default;
+  user-select: none;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+}
+.absfs #main .slideshow-container {
+  position: relative;
+  background-color: black;
+}
+.absfs #main .slideshow-container .mySlides {
+  display: none;
+}
+.absfs #main .slideshow-container .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.absfs #main .slideshow-container .prev,
+.absfs #main .slideshow-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.absfs #main .slideshow-container .prev:hover,
+.absfs #main .slideshow-container .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.absfs #main .slideshow-container .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.absfs #main .slideshow-container .dot {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.absfs #main .slideshow-container .active,
+.absfs #main .slideshow-container .dot:hover {
+  background-color: #717171;
+}
+.absfs #main .slideshow-container .autograph {
+  width: 25%;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+.absfs #main .slideshow-container .fa {
+  position: absolute;
+  width: 200px;
+  margin-left: -115px;
+  bottom: 20px;
+  left: 50%;
+  z-index: 4;
+}
+.absfs #main .slideshow-container .fa a {
+  position: absolute;
+  font-size: 15px;
+  width: 15px;
+  bottom: 0;
+  margin-left: 0;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: .3s;
+}
+@media screen and (max-width: 452px) {
+  .absfs #main .slideshow-container .fa a {
+    font-size: 10px;
+    width: 10px;
+    padding: 6.67px;
+  }
+}
+.absfs #main .slideshow-container .fa a:hover {
+  opacity: 0.7;
+}
+.absfs #main .slideshow-container .fa .fa-facebook {
+  background: #3B5998;
+  color: white;
+  left: -10%;
+}
+.absfs #main .slideshow-container .fa .fa-facebook::before {
+  content: "\f09a";
+  /* content: url(http://img/image/f.png);*/
+}
+.absfs #main .slideshow-container .fa .fa-twitter {
+  background: #55ACEE;
+  color: white;
+  left: 10%;
+}
+.absfs #main .slideshow-container .fa .fa-twitter::before {
+  content: "\f099";
+}
+.absfs #main .slideshow-container .fa .fa-google {
+  background: #dd4b39;
+  color: white;
+  left: 30%;
+}
+.absfs #main .slideshow-container .fa .fa-google::before {
+  content: "\f1a0";
+}
+.absfs #main .slideshow-container .fa .fa-linkedin {
+  background: #007bb5;
+  color: white;
+  left: 50%;
+}
+.absfs #main .slideshow-container .fa .fa-linkedin::before {
+  content: "\f0e1";
+}
+.absfs #main .slideshow-container .fa .fa-youtube {
+  background: #bb0000;
+  color: white;
+  left: 70%;
+}
+.absfs #main .slideshow-container .fa .fa-youtube::before {
+  content: "\f167";
+}
+.absfs #main .slideshow-container .fa .fa-instagram {
+  background: #125688;
+  color: white;
+  left: 90%;
+}
+.absfs #main .slideshow-container .fa .fa-instagram::before {
+  content: "\f16d";
+}
+.absfs #main .slideshow-container .pressaOne {
+  position: absolute;
+  width: 10%;
+  right: 40px;
+  top: 5%;
+  box-sizing: border-box;
+}
+.absfs #main .slideshow-container .pressaOne a {
+  cursor: pointer;
+}
+.absfs #main .slideshow-container .pressaOne a img {
+  box-sizing: border-box;
+  border: 1px solid rgba(103, 192, 223, 0.5);
+}
+.absfs #main .slideshow-container .pressaOne a img:hover {
+  border: 1px solid #67c0df;
+}
+.absfs #main .slideshow-container .pressaTwo {
+  position: absolute;
+  width: 10%;
+  right: 40px;
+  top: 25%;
+  box-sizing: border-box;
+}
+.absfs #main .slideshow-container .pressaTwo a {
+  cursor: pointer;
+}
+.absfs #main .slideshow-container .pressaTwo a img {
+  box-sizing: border-box;
+  border: 1px solid rgba(103, 192, 223, 0.5);
+}
+.absfs #main .slideshow-container .pressaTwo a img:hover {
+  border: 1px solid #67c0df;
+}
+.absfs #main .parallax {
+  /*height: 800px;*/
+  /*min-width: 400px;*/
+  /*background-origin: content-box ;
+      background: url('../img/up/17.jpg') fixed center no-repeat;
+      background-size: cover;*/
+  background-color: #261A4D;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+.absfs #main .parallax .wer {
+  display: flex;
+  flex-direction: column;
+  background: url('../img/up/82.jpg') fixed bottom no-repeat;
+  background-size: cover ;
+}
+.absfs #main .parallax .wer .newsTitle {
+  /*flex-basis: 50px;*/
+  /* border-top: 2px solid black;*/
+  /* background-color: #d6ff30;*/
+  /*position: absolute;
+          width: 100%;
+          height: 800px;*/
+  /*.biographyText{
+
+          width: 50%;
+          position: absolute;
+          top:70px;
+          right: 5%;
+          height: 700px;
+          overflow-y: auto;
+          text-align: justify;
+          font-size: 14px;
+          padding: -5px;
+
+          h3{
+            display: inline-block;
+            background-color: rgba(241,241,241,0.5);
+            border-radius: 5px;
+            box-shadow: 0 2px 2px #337AB1;
+            margin: 0;
+          }
+          pre {
+            height: 50px;
+            background-color: rgba(241,241,241,0.5);
+            border-radius: 5px;
+            box-shadow: 0 2px 2px #337AB1;
+
+          }
+
+          p{
+            text-indent: 30px;
+            background-color: rgba(241,241,241,0.5);
+            border-radius: 5px;
+            box-shadow: 0 2px 2px #337AB1;
+
+          }
+
+          @media screen and (max-width: 452px){
+            width: 80%;
+          }
+
+
+
+
+          !*column-count: 2;
+          -webkit-column-gap: 20px; !* Chrome, Safari, Opera *!
+
+          column-gap: 40px;
+
+          column-rule: 1px solid lightblue;*!
+
+        }*/
+}
+.absfs #main .parallax .wer .newsTitle h3 {
+  color: #fefefe;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 5px 0 5px 5px;
+}
+.absfs #main .parallax .wer .news {
+  flex-basis: auto;
+  /*background-color: #76ff41;*/
+  background-color: rgba(75, 51, 151, 0.5);
+  /*border-top: 2px solid black;
+           border-left: 2px solid black;
+           border-right: 2px solid black;*/
+  display: flex;
+  box-sizing: border-box;
+  /*&:last-child {
+            border-bottom: 2px solid black;
+          }*/
+}
+@media screen and (max-width: 452px) {
+  .absfs #main .parallax .wer .news {
+    flex-direction: column;
+    padding-bottom: 15px;
+  }
+}
+.absfs #main .parallax .wer .news .newsFoto {
+  /*flex-basis: 250px;*/
+  /*background-color: #76ff41;*/
+  box-sizing: border-box;
+  flex-shrink: 1;
+}
+.absfs #main .parallax .wer .news .newsFoto div {
+  width: 250px;
+}
+.absfs #main .parallax .wer .news .newsFoto div video {
+  width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 452px) {
+  .absfs #main .parallax .wer .news .newsFoto div {
+    width: auto;
+  }
+}
+.absfs #main .parallax .wer .news .newsFoto div a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.absfs #main .parallax .wer .news .newsFoto div a img {
+  box-sizing: border-box;
+  border: 1px solid rgba(103, 192, 223, 0.5);
+}
+.absfs #main .parallax .wer .news .newsFoto div a img:hover {
+  border: 1px solid #67c0df;
+}
+.absfs #main .parallax .wer .news .newsInformation {
+  box-sizing: border-box;
+  flex-grow: 1;
+  margin: 0 10px 0 50px;
+}
+@media screen and (max-width: 452px) {
+  .absfs #main .parallax .wer .news .newsInformation {
+    margin: 0 10px 0 10px;
+  }
+}
+.absfs #main .parallax .wer .news .newsInformation .newsInformationTitle {
+  margin: 0 0 5px 0;
+}
+.absfs #main .parallax .wer .news .newsInformation .newsInformationTitle a {
+  margin: 0;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 1.3em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-style: normal;
+  color: #fefefe;
+  cursor: pointer;
+}
+.absfs #main .parallax .wer .news .newsInformation span {
+  font-family: 'Oswald', sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  color: #fefefe;
+}
+.absfs #main .parallax .wer .news .newsInformation p {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  color: #fefefe;
+  line-height: 1.5em;
+  text-align: left;
+}
+.absfs #main .parallax .wer .news .newsInformation a {
+  color: #999999 ;
+  font-size: 12px ;
+  font-weight: bold ;
+  font-style: normal ;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+}
+.absfs #main .parallax .wer .news .newsInformation a:hover {
+  color: #fefefe;
+}
+.absfs #main .navigator {
+  /* height: 400px;
+      width: 300px;
+      position: absolute;*/
+}
+.absfs #main #myNavigation a {
+  display: block;
+  position: absolute;
+  /*left: -80px;*/
+  transition: 0.3s;
+  padding: 10px;
+  width: 150px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 5px;
+  /*z-index: 2;*/
+  /*&:hover {
+          left: 0;
+        }*/
+}
+.absfs #main #myNavigation #biog {
+  left: -130px;
+  top: 100px;
+  background: url("../img/icons/right.png") 90% 50% no-repeat;
+  background-size: 20px 20px;
+}
+.absfs #main #myNavigation #biog:hover {
+  left: 0;
+  background-color: #261A4D;
+}
+.absfs #main #myNavigation #nom {
+  right: -130px;
+  top: 100px;
+  background: url("../img/icons/left.png") 10% 50% no-repeat;
+  background-size: 20px 20px;
+  text-align: right;
+}
+.absfs #main #myNavigation #nom:hover {
+  right: 0;
+  background-color: #261A4D;
+}
+.absfs #main .footer {
+  height: 50px;
+  text-align: center;
+  padding: 1px;
+  box-sizing: border-box;
+  background-color: #261A4D;
+}
+.absfs #main .footer span {
+  display: block;
+  color: #dddddd;
+  width: auto;
+  font-family: "Oswald", sans-serif;
+  font-size: 12px;
+  margin: 5px 0 0 0;
+}
+.absfs #main .footer a {
+  font-family: "Oswald", sans-serif;
+  display: inline-block;
+  cursor: pointer;
+  color: #dddddd;
+  font-style: normal;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 12px;
+  margin: auto;
+}
+.absfs #main .parallaxB {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url('../img/image/1.jpg') fixed center top no-repeat;
+  background-size: cover;
+  /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  /*}*/
+  /*third page*/
+}
+.absfs #main .parallaxB .navB {
+  background-color: #261A4D;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.absfs #main .parallaxB .navB .branding {
+  box-sizing: border-box;
+}
+.absfs #main .parallaxB .navB .branding h1 {
+  margin: 0;
+}
+.absfs #main .parallaxB .navB .branding h1 a {
+  width: 450px;
+  height: 90px;
+  line-height: 90px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  color: #eee;
+}
+.absfs #main .parallaxB .navB .branding h1 a span {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  /*font-family: "Oswald", sans-serif;*/
+}
+@media screen and (max-width: 452px) {
+  .absfs #main .parallaxB .navB .branding h1 a span {
+    letter-spacing: 1px;
+  }
+}
+.absfs #main .parallaxB .contentBiography {
+  background-color: rgba(75, 51, 151, 0.5);
+  min-height: 550px;
+  margin-top: 75px;
+  flex-grow: 1;
+}
+.absfs #main .parallaxB .contentBiography #block1 {
+  height: 100%;
+}
+.absfs #main .parallaxB .contentBiography #block1 section {
+  width: 95%;
+  height: 100%;
+  margin: auto;
+  /*margin: 0 10px 0 10px;*/
+  /*padding: 0 50px 0 10px;*/
+  column-count: 3;
+  column-gap: 20px;
+  /*column-width: 100px;*/
+  text-align: justify;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  color: #fefefe;
+  line-height: 1.5em;
+  padding: 10px 0 10px 0;
+}
+@media screen and (max-width: 710px) {
+  .absfs #main .parallaxB .contentBiography #block1 section {
+    column-count: 2;
+  }
+}
+@media screen and (max-width: 452px) {
+  .absfs #main .parallaxB .contentBiography #block1 section {
+    column-count: 1;
+  }
+}
+.absfs #main .parallaxB .contentBiography #block1 section p:first-child {
+  margin-top: 0;
+}
+.absfs #main .parallaxB .contentBiography #block2 section {
+  display: flex;
+}
+@media screen and (max-width: 710px) {
+  .absfs #main .parallaxB .contentBiography #block2 section {
+    flex-direction: column;
+  }
+}
+.absfs #main .parallaxB .contentBiography #block2 section .nominanations {
+  /*flex-basis: 300px;*/
+  /*background-color: #af2e3e;*/
+  flex-grow: 1;
+}
+.absfs #main .parallaxB .contentBiography #block2 section .nominanations .prize {
+  width: 95%;
+  margin: auto;
+}
+.absfs #main .parallaxB .contentBiography #block2 section .nominanations .prize span {
+  display: block;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #fefefe;
+}
+.absfs #main .parallaxB .contentBiography #block2 section .nominanations .prize h3 {
+  color: #fefefe;
+}
+.absfs #main .parallaxB .contentBiography #block2 section .nominanations .prize ul {
+  list-style-type: disc;
+  font-family: "Oswald", sans-serif;
+  /* margin: 0 2px 0 2px;
+                  padding: 0;*/
+}
+.absfs #main .parallaxB .contentBiography #block2 section .nominanations .prize ul li {
+  color: #fefefe;
+}
+.absfs #main .parallaxB .contentBiography #block2 section .nominanations .prize .awardFoto {
+  width: 40%;
+  margin: auto;
+}
+.absfs #main .parallaxB .contentBiography #block2 section .nominanations .prize .awardFoto img {
+  margin-top: 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(103, 192, 223, 0.5);
+}
+.absfs #main .parallaxB .contentBiography #block2 section .nominanations .prize .awardFoto img:hover {
+  border: 1px solid #67c0df;
+}
+.absfs #main .parallaxB .contentBiography #block2 section .nominanations .prize .awardFoto span {
+  font-size: 14px;
+  color: #fefefe;
+}
+.absfs #main .parallaxB .contentBiography #block2 section .filmography {
+  /*flex-grow: 1;*/
+  /*background-color: #578aaf;*/
+}
+@media screen and (max-width: 710px) {
+  .absfs #main .parallaxB .contentBiography #block2 section .filmography {
+    margin-top: 15px;
+  }
+}
+.absfs #main .parallaxB .contentBiography #block2 section .filmography table {
+  margin: auto;
+  width: 85%;
+  border: 1px solid #BF48E3;
+  border-collapse: collapse;
+}
+.absfs #main .parallaxB .contentBiography #block2 section .filmography table caption {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #fefefe;
+}
+.absfs #main .parallaxB .contentBiography #block2 section .filmography table td,
+.absfs #main .parallaxB .contentBiography #block2 section .filmography table th {
+  border: 1px solid #BF48E3;
+  border-collapse: collapse;
+  padding: 5px;
+  font-family: "Oswald", sans-serif;
+  color: #fefefe;
+}
+.absfs #main .parallaxB .contentBiography #block2 section .filmography table td {
+  font-size: 12px;
+  font-weight: 100;
+}
+.absfs #main .parallaxB .contentBiography div {
+  position: relative;
+  width: 100%;
+  /*min-height: 50%;*/
+}
+.absfs #main .parallaxB .contentBiography div .title_biog {
+  position: absolute;
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+  top: -50px;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-style: normal;
+  color: #fefefe;
+  cursor: default;
+  user-select: none;
+}
+.absfs #main .parallaxB .contentBiography div .title_biog h2 {
+  margin: 0;
+  opacity: 1;
+}
+.absfs #main .parallaxB .contentBiography div .title_nom {
+  position: absolute;
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+  top: -50px;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-style: normal;
+  color: #fefefe;
+  cursor: default;
+  user-select: none;
+}
+.absfs #main .parallaxB .contentBiography div .title_nom h2 {
+  margin: 0 0 5px 0;
+  opacity: 1;
+}
+.absfs #main .parallaxB .contentBiography .tab,
+.absfs #main .parallaxB .contentBiography .tab:target ~ #block1 {
+  display: none;
+}
+.absfs #main .parallaxB .contentBiography .tab:target {
+  display: block;
+}
+.absfs #main .parallaxB .fansTextOne {
+  background-color: rgba(75, 51, 151, 0.5);
+  min-height: 550px;
+  flex-grow: 1;
+}
+.absfs #main .parallaxB .fansTextOne h2 {
+  color: #fefefe;
+}
+.absfs #main .parallaxB .fansTextOne article {
+  margin: auto;
+  width: 95%;
+}
+.absfs #main .parallaxB .fansTextOne article h2 {
+  color: #fefefe;
+}
+.absfs #main .parallaxB .fansTextOne article p {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #fefefe;
+  font-weight: 100;
+  text-align: justify;
+  font-family: 'Arial', sans-serif;
+}
+.absfs #main .parallaxB .fansTextOne article ul {
+  list-style-type: disc;
+  font-family: "Oswald", sans-serif;
+}
+.absfs #main .parallaxB .fansTextOne article ul li {
+  color: #fefefe;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 100;
+}
+.absfs #main .parallaxB .fansTextOne article .link a {
+  width: 150px;
+  color: #303030;
+  background-color: #fff;
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #444;
+  border-radius: 4px;
+  text-decoration: none;
+  line-height: 1.42857143;
+  font-family: 'Oswald', sans-serif;
+}
+.absfs #main .parallaxB .fansGallery {
+  background-color: rgba(75, 51, 151, 0.5);
+  min-height: 550px;
+  flex-grow: 1;
+}
+.absfs #main .parallaxB .fansGallery section {
+  width: 90%;
+  margin: auto;
+  padding-top: 20px;
+}
+.absfs #main .parallaxB .fansGallery section .responsive {
+  padding: 6px 6px;
+  float: left;
+  width: 19.99999%;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 500px) {
+  .absfs #main .parallaxB .fansGallery section .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .absfs #main .parallaxB .fansGallery section .responsive {
+    width: 100%;
+  }
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery {
+  border: 1px solid #ccc;
+  background-color: rgba(188, 67, 230, 0.7);
+  /* background: url('../img/icons/64/Argentina.png')  center top no-repeat;
+              background-size: cover;*/
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img {
+  width: 100%;
+  height: auto;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/1.png"] {
+  background: url('../img/icons/64/Argentina.png') center bottom no-repeat;
+  background-size: cover ;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/2.png"] {
+  background: url('../img/icons/64/Australia.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/3.png"] {
+  background: url('../img/icons/64/Belarus.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/4.png"] {
+  background: url('../img/icons/64/Brazil.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/5.png"] {
+  background: url('../img/icons/64/Bulgaria.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/6.png"] {
+  background: url('../img/icons/64/Colombia.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/7.png"] {
+  background: url('../img/icons/64/Czech-Republic.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/8.png"] {
+  background: url('../img/icons/64/Georgia.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/9.png"] {
+  background: url('../img/icons/64/Greece.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/10.png"] {
+  background: url('../img/icons/64/Italy.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/11.png"] {
+  background: url('../img/icons/64/Mexico.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/12.png"] {
+  background: url('../img/icons/64/Portugal.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/13.png"] {
+  background: url('../img/icons/64/Russia.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/14.png"] {
+  background: url('../img/icons/64/Serbia.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/15.png"] {
+  background: url('../img/icons/64/Slovenia.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/16.png"] {
+  background: url('../img/icons/64/Switzerland.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/17.png"] {
+  background: url('../img/icons/64/Ukraine.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/18.png"] {
+  background: url('../img/icons/64/Uruguay.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/19.png"] {
+  background: url('../img/icons/64/Argentina.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/20.png"] {
+  background: url('../img/icons/64/Austria.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/21.png"] {
+  background: url('../img/icons/64/Netherlands.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/22.png"] {
+  background: url('../img/icons/64/Brazil.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/23.png"] {
+  background: url('../img/icons/64/Chile.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/24.png"] {
+  background: url('../img/icons/64/Costa-Rica.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/25.png"] {
+  background: url('../img/icons/64/France.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/26.png"] {
+  background: url('../img/icons/64/Germany.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/27.png"] {
+  background: url('../img/icons/64/Hungary.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/28.png"] {
+  background: url('../img/icons/64/Lebanon.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/29.png"] {
+  background: url('../img/icons/64/Poland.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/30.png"] {
+  background: url('../img/icons/64/Romania.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/31.png"] {
+  background: url('../img/icons/64/Norway.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/32.png"] {
+  background: url('../img/icons/64/Slovakia.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/33.png"] {
+  background: url('../img/icons/64/Spain.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/34.png"] {
+  background: url('../img/icons/64/Turkey.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/35.png"] {
+  background: url('../img/icons/64/United-Kingdom.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery img[src="img/fans/36.png"] {
+  background: url('../img/icons/64/United-States.png') center top no-repeat;
+  background-size: cover;
+}
+.absfs #main .parallaxB .fansGallery section .responsive div.gallery:hover {
+  border: 1px solid #777;
+}
+.absfs #main .parallaxB .fansGallery section .desc {
+  text-align: center;
+  /*a {
+              text-decoration: none;
+
+              &::before {
+                content: "\f09a";
+              }
+            }*/
+}
+.absfs #main .parallaxB .fansGallery section .desc .fy-facebook {
+  color: #fefefe;
+  text-decoration: none;
+  font: normal normal normal 18px FontAwesome;
+}
+.absfs #main .parallaxB .fansGallery section .desc .fy-facebook:hover {
+  color: #b3b3b3;
+}
+.absfs #main .parallaxB .fansGallery section .desc .fy-facebook::before {
+  content: "\f09a";
+}
+.absfs #main .parallaxB .fansGallery section .desc .fy-envelop {
+  color: #fefefe;
+  text-decoration: none;
+  font: normal normal normal 18px FontAwesome;
+}
+.absfs #main .parallaxB .fansGallery section .desc .fy-envelop:hover {
+  color: #b3b3b3;
+}
+.absfs #main .parallaxB .fansGallery section .desc .fy-envelop::before {
+  content: "\f003";
+}
